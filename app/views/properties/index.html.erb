@@ -1,0 +1,33 @@
+<h1>List of Properties</h1>
+
+<table >
+	<thead>
+		<tr>
+			<th>NAME</th>
+			<th>ADDRESS</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<% @properties.each do |property|%>
+		<tr>
+			<td><%=property.name%></td>
+			<td><%=property.address%></td>
+
+			
+			<td><%= link_to 'Show',property_path(property.id)%></td> &nbsp;
+			<td><%= link_to 'Edit',edit_property_path(property.id)%></td> &nbsp;
+			<td><%= link_to 'Delete',property_path(property.id),data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%></td>
+
+			<!-- <td><%#= link_to 'Show Bookings',bookings_property_path(property)%></td> -->
+		</tr>
+		
+		<%end%>
+
+
+	</tbody>
+
+</table>
+
+<br>
+ <div ><%= link_to 'Create New property',new_property_path %></div>

@@ -1,0 +1,9 @@
+<h1>Showing Property</h1>
+
+
+<p><strong>name: </strong><%= @property.name %></p>
+<p><strong>address: </strong><%= @property.address%></p>
+
+
+<%= link_to 'edit property',edit_property_path%><br>
+<%= button_to 'destroy property',property_path, method: :delete%>
